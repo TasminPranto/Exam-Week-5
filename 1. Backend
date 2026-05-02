@@ -1,0 +1,27 @@
+const express = require('express');
+const cors = require('cors');
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+// Mock Data
+const courses = [
+  { id: 1, title: 'Web Development 101', progress: '80%' },
+  { id: 2, title: 'Advanced React', progress: '45%' }
+];
+
+// Routes
+app.post('/api/login', (req, res) => {
+  const { email, password } = req.body;
+  if (email === 'user@example.com' && password === 'password') {
+    res.json({ success: true, token: 'mock-jwt-token' });
+  } else {
+    res.status(401).json({ success: false, message: 'Invalid credentials' });
+  }
+});
+
+app.get('/api/courses', (req, res) => res.json(courses));
+
+const PORT = 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
