@@ -5,23 +5,25 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Mock Data
+// Mock Data for the Dashboard and Course Pages
 const courses = [
-  { id: 1, title: 'Web Development 101', progress: '80%' },
-  { id: 2, title: 'Advanced React', progress: '45%' }
+  { id: 1, title: 'Web Development 101', instructor: 'Instructor Name', progress: 80, modules: 5, completed: 4 },
+  { id: 2, title: 'Advanced React', instructor: 'Instanced React', progress: 45, modules: 10, completed: 4 },
+  { id: 3, title: 'Data Structures & Algorithms', instructor: 'Instructor Name', progress: 15, modules: 12, completed: 2 }
 ];
 
-// Routes
+// Login Endpoint
 app.post('/api/login', (req, res) => {
   const { email, password } = req.body;
   if (email === 'user@example.com' && password === 'password') {
-    res.json({ success: true, token: 'mock-jwt-token' });
+    res.json({ success: true, user: 'Alex Johnson', token: 'mock-jwt-token' });
   } else {
     res.status(401).json({ success: false, message: 'Invalid credentials' });
   }
 });
 
+// Course Data Endpoint
 app.get('/api/courses', (req, res) => res.json(courses));
 
 const PORT = 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Backend server running on http://localhost:${PORT}`));
