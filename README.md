@@ -1,18 +1,18 @@
-# Course Management System
+# Edu-Learn Full Stack Application
 
-## Project Overview
-A full-stack application enabling users to authenticate and track their learning progress through various courses.
+## 📖 Project Overview
+Edu-Learn is a simplified LMS (Learning Management System) that allows students to log in, view their learning progress on a dashboard, and interact with specific course modules.
 
-## Features
-* JWT-based Mock Authentication
-* Course Progress Tracking
-* Responsive Dashboard
+## ✨ Features
+* **Custom UI:** Modern design using Tailwind CSS.
+* **Navigation:** State-based routing between Login, Dashboard, and Courses.
+* **Progress Tracking:** Dynamic progress bars based on course data.
 
-## Tech Stack
-* **Frontend:** React, Tailwind CSS
+## 🛠 Tech Stack
+* **Frontend:** React.js, Tailwind CSS
 * **Backend:** Node.js, Express
-* **Database:** Mock JSON Data
+* **Communication:** REST API (Mocked)
 
-## Setup Instructions
-1. **Backend:** Run `cd backend && npm install && node server.js`
-2. **Frontend:** Run `cd frontend && npm install && npm start`
+## 🚀 Setup
+1. **Backend:** `node server.js` (runs on port 5000).
+2. **Frontend:** `npm start` (runs on port 3000).
